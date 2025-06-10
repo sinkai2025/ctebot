@@ -38,18 +38,13 @@ def handle_image(event):
     suggestion = "這是保麗龍，請丟入標有保麗龍之美固籠。"
     image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
 
-from linebot.models import ImageSendMessage
-
-line_bot_api.reply_message(
-    event.reply_token,
-    [
-        TextSendMessage(text=f"{label}\n{suggestion}"),
-        ImageSendMessage(
-            original_content_url=image_url,
-            preview_image_url=image_url
-        )
-    ]
-)
+    line_bot_api.reply_message(
+        event.reply_token,
+        [
+            TextSendMessage(text=f"{label}\n{suggestion}"),
+            ImageSendMessage(
+                original_content_url=image_url,
+                preview_image_url=image_url
 
 # 指定 host/port，適用於 Render
 if __name__ == "__main__":
