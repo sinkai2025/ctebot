@@ -36,17 +36,10 @@ def handle_image(event):
     # 模擬分類辨識
     label = "保麗龍"
     suggestion = "這是保麗龍，請丟入塑膠類回收桶。"
-    image_url = "https://drive.google.com/file/d/19HoR5FVqt78g6eEPaA3dl5SufyxNYDGz/view?usp=sharing"
 
     line_bot_api.reply_message(
         event.reply_token,
-        [
-            TextSendMessage(text=f"{label}\n{suggestion}"),
-            ImageSendMessage(
-                original_content_url=image_url,
-                preview_image_url=image_url
-            )
-        ]
+        TextSendMessage(text=f"{label}\n{suggestion}")
     )
 
 # 指定 host/port，適用於 Render
