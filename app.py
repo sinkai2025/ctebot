@@ -39,7 +39,13 @@ def handle_image(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=f"{label}\n{suggestion}")
+    [
+        TextSendMessage(text="這是測試訊息"),
+        ImageSendMessage(
+            original_content_url="https://i.imgur.com/xyz1234.jpg",  # ← 換成你能開啟的圖片網址
+            preview_image_url="https://i.imgur.com/xyz1234.jpg"
+        )
+    ]
     )
 
 # 指定 host/port，適用於 Render
