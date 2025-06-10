@@ -15,11 +15,13 @@ handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 def callback():
     signature = request.headers.get("X-Line-Signature", "")
     body = request.get_data(as_text=True)
+
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
-    return 'OK'
+
+    return 'OK''
 
 @handler.add(MessageEvent, message=ImageMessage)
 def handle_image(event):
