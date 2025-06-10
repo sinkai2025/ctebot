@@ -45,6 +45,9 @@ def handle_image(event):
             ImageSendMessage(
                 original_content_url=image_url,
                 preview_image_url=image_url
+            )
+        ]
+    )
 
 # 指定 host/port，適用於 Render
 if __name__ == "__main__":
