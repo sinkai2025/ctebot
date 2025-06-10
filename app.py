@@ -1,9 +1,10 @@
 import os
 import tempfile
-from flask import Flask, request
+from flask import Flask, request, abort
 from dotenv import load_dotenv
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, ImageMessage, TextSendMessage, ImageSendMessage
+from linebot.exceptions import InvalidSignatureError
+from linebot.models import MessageEvent, ImageMessage, TextSendMessage
 
 # 載入 .env 設定
 load_dotenv()
