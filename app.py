@@ -35,7 +35,7 @@ def handle_image(event):
 
     # 模擬分類辨識
     label = "保麗龍"
-    suggestion = "這是保麗龍，請丟入塑膠類回收桶。"
+    suggestion = "這是保麗龍，請丟入標有保麗龍之美固籠。"
 
     line_bot_api.reply_message(
         event.reply_token,
