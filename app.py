@@ -9,7 +9,6 @@ from linebot.models import MessageEvent, ImageMessage, TextSendMessage, ImageSen
 from linebot.exceptions import InvalidSignatureError
 from google.cloud import vision
 from google.oauth2 import service_account
-
 app = Flask(__name__)
 
 # LINE credentials from environment variables
