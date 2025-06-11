@@ -1,0 +1,9 @@
+# 忽略 Google 金鑰
+*.json
+
+# Python 快取
+__pycache__/
+*.pyc
+
+# VSCode 設定
+.vscode/
