@@ -23,12 +23,6 @@ def callback():
 
 @handler.add(MessageEvent, message=ImageMessage)
 def handle_image(event):
-    message_content = line_bot_api.get_message_content(event.message.id)
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tf:
-        tf.write(message_content.content)
-        image_path = tf.name
-
-    # 模擬分類辨識
     label = "保麗龍"
     suggestion = f"這是「{label}」，請依規定分類處理。"
     image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/%E4%BF%9D%E9%BA%97%E9%BE%8D.jpg"
@@ -40,6 +34,7 @@ def handle_image(event):
             preview_image_url=image_url
         )
     ]
+
     line_bot_api.reply_message(event.reply_token, messages)
 
 if __name__ == "__main__":
