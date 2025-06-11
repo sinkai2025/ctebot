@@ -31,7 +31,7 @@ def handle_image(event):
     # 模擬分類辨識
     label = "保麗龍"
     suggestion = f"這是「{label}」，請依規定分類處理。"
-    image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
+    image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/%E4%BF%9D%E9%BA%97%E9%BE%8D.jpg"
 
     messages = [
         TextSendMessage(text=f"{label}\n{suggestion}"),
