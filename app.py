@@ -1,5 +1,7 @@
 
 import os
+credential_path = "/etc/secrets/linebot-credentials.json"
+credentials = service_account.Credentials.from_service_account_file(credential_path)
 import tempfile
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
