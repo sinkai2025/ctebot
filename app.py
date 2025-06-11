@@ -13,7 +13,7 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # 設定 Google Vision 憑證環境變數
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "linebot-key.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "linebot-462603-4cdf0a883415.json"
 
 @app.route("/callback", methods=['POST'])
 def callback():
