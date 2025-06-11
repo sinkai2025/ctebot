@@ -45,13 +45,13 @@ def handle_image(event):
     # 分類條件
     if any(k in labels for k in ["foam", "polystyrene"]):
         label = "保麗龍"
-        image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
+        image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/refs/heads/main/%E4%BF%9D%E9%BA%97%E9%BE%8D.jpg"
     elif any(k in labels for k in ["bottle", "plastic"]):
         label = "寶特瓶"
         image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
     elif any(k in labels for k in ["cardboard", "carton"]):
         label = "紙箱"
-        image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
+        image_url = https://raw.githubusercontent.com/sinkai2025/ctebot/refs/heads/main/%E7%B4%99%E9%A1%9E.jpg"
     else:
         label = "無法判別"
         image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/default.jpg"
