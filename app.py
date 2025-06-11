@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, ImageMessage, TextSendMessage
+from linebot.models import TextSendMessage, ImageSendMessage
 
 # 載入 .env 設定
 load_dotenv()
@@ -33,13 +34,23 @@ def handle_image(event):
         tf.write(message_content.content)
         image_path = tf.name
 
-    # 模擬分類辨識
+    # 模擬分類辨識結果
     label = "保麗龍"
     suggestion = "這是保麗龍，請丟入塑膠類回收桶。"
 
+    # 圖片連結（務必使用 raw.githubusercontent.com）
+    image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
+
+    # 回覆文字 + 圖片
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=f"{label}\n{suggestion}")
+        [
+            TextSendMessage(text=f"{label}\n{suggestion}"),
+            ImageSendMessage(
+                original_content_url=image_url,
+                preview_image_url=image_url
+            )
+        ]
     )
 
 # 指定 host/port，適用於 Render
