@@ -1,5 +1,6 @@
 
 import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/etc/secrets/linebot-credentials.json"
 import tempfile
 from flask import Flask, request, abort
 from dotenv import load_dotenv
@@ -16,10 +17,6 @@ load_dotenv()
 app = Flask(__name__)
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
-
-# Google Vision 用的金鑰
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "linebot-462603-c25066979a2a.json"
-vision_client = vision.ImageAnnotatorClient()
 
 @app.route("/callback", methods=['POST'])
 def callback():
