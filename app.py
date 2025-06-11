@@ -42,18 +42,18 @@ def handle_image(event):
     label = labels[0] if labels else "未知物品"
 
     # 提示語 & 測試圖片網址（你可替換）
-    suggestion = f"這是 {label}，請依規定分類處理。"
-    image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
+suggestion = f"這是「{label}」請依規定分類處理。"
+image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/保麗龍.jpg"
 
-    messages = [
-        TextSendMessage(text=f"{label}
-{suggestion}"),
-        ImageSendMessage(
-            original_content_url=image_url,
-            preview_image_url=image_url
-        )
-    ]
-    line_bot_api.reply_message(event.reply_token, messages)
+messages = [
+    TextSendMessage(text=f"{label}\n{suggestion}"),
+    ImageSendMessage(
+        original_content_url=image_url,
+        preview_image_url=image_url
+    )
+]
+
+line_bot_api.reply_message(event.reply_token, messages)
 
 if __name__ == "__main__":
     app.run()
