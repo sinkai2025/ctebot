@@ -59,8 +59,7 @@ def handle_image(event):
             image_url = "https://raw.githubusercontent.com/sinkai2025/ctebot/main/寶特瓶.jpg"
             break
 
-    messages = [TextSendMessage(text=f"{label}
-{suggestion}")]
+    messages = [TextSendMessage(text=f"{label}\n{suggestion}")]
     if image_url:
         messages.append(ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
 
