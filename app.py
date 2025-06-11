@@ -18,7 +18,7 @@ handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # Google Vision credentials from local JSON
 vision_client = vision.ImageAnnotatorClient(
-    credentials=service_account.Credentials.from_service_account_file("linebot-462603-4cdf0a883415.json")
+    credentials=service_account.Credentials.from_service_account_file("linebot-credentials.json")
 )
 
 @app.route("/callback", methods=["POST"])
