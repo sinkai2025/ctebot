@@ -42,8 +42,8 @@ def handle_image(event):
     [
         TextSendMessage(text="這是測試訊息"),
         ImageSendMessage(
-            original_content_url="https://i.imgur.com/xyz1234.jpg",  # ← 換成你能開啟的圖片網址
-            preview_image_url="https://i.imgur.com/xyz1234.jpg"
+            original_content_url="https://i.ibb.co/8ngcXzVx/image.jpg",
+            preview_image_url="https://i.ibb.co/8ngcXzVx/image.jpg"
         )
     ]
     )
